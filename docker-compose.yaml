@@ -10,8 +10,8 @@ services:
       - ${path}/data:/opt/valheim
     ports: 
       - "${PORT}:${PORT}/udp"
-      - "{WSPORT}:${WSPORT}/tcp"
+      - "${WSPORT}:${WSPORT}/tcp"
     env_file:
-      - $HOME/valheim-server/valheim.env
+      - ${path}/valheim.env
     restart: always
     stop_grace_period: 2m
