@@ -6,11 +6,11 @@ services:
     cap_add:
       - sys_nice
     volumes: 
-      - $HOME/valheim-server/config:/config
-      - $HOME/valheim-server/data:/opt/valheim
+      - ${path}/config:/config
+      - ${path}/data:/opt/valheim
     ports: 
-      - "2456-2457:2456-2457/udp"
-      - "9001:9001/tcp"
+      - "${PORT}:${PORT}/udp"
+      - "{WSPORT}:${WSPORT}/tcp"
     env_file:
       - $HOME/valheim-server/valheim.env
     restart: always
